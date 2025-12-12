@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --default-font-family: "inter", system-ui, sans-serif;
+
+    --color-charcoal: #374151;
+    --color-slate: #49566C;
+    --color-gold: #FFBD00;
+    --color-goldenrod: #C28E00;
+    --color-raspberry: #D81159;
+    --color-cherry: #B4124E;
+
+    @keyframes slideUp {
+        
+    }
+
+    @keyframes slideUpReverse {
+
+    }
+}
