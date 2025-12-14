@@ -40,12 +40,12 @@ incrementBtn.addEventListener("click", (e) => {
     incrementSlice();
     setVisualOption();
     confetti({
-    particleCount: 40,
-    spread: 60,
-    shapes: ['text'],
-    text: '🍕',
-    scalar: 1.4
-  });
+        particleCount: 40,
+        spread: 60,
+        shapes: ['circle', 'star', 'square'],
+        text: '🍕',
+        scalar: 1.0
+    });
 });
 
 // IDEIA DO SILAS: Sistema de demanda de pizzas em rodizio
