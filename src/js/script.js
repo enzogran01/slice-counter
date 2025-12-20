@@ -7,6 +7,7 @@ const visualOption = document.getElementById("visualization");
 const quantity = document.getElementById("quantity");
 const incrementBtn = document.getElementById("incrementBtn");
 const pizzasContainer = document.getElementById("pizzasContainer");
+const confettiOut = document.getElementById("confettiOut");
 
 // funções 
 function setVisualOption () {
@@ -29,6 +30,8 @@ function updateVariables() {
     rest = pizzas < 1 ? Math.ceil(slices % 8) : Math.floor(slices % 8);
 }
 
+const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
 // eventListeners
 document.addEventListener("DOMContentLoaded", () => {
     setVisualOption();
@@ -39,12 +42,19 @@ visualOption.addEventListener("change", () => {
 incrementBtn.addEventListener("click", (e) => {
     incrementSlice();
     setVisualOption();
+
+    const rect = confettiOut.getBoundingClientRect();
+    const x = rect.left;
+    const y = rect.top;
+
     confetti({
         particleCount: 40,
-        spread: 60,
-        shapes: ['circle', 'star', 'square'],
-        text: '🍕',
-        scalar: 1.0
+        shapes: ["circle", "circle","star"],
+        scalar: 1.0,
+        origin: {
+            x: (rect.left + rect.width / 2) / window.innerWidth,
+            y: (rect.top + rect.height / 2) / window.innerHeight
+        }
     });
 });
 
